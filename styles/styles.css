@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url("../images/bg.svg");
+    background-repeat: no-repeat;
+    background-size: fill;
+    background-position: center;
+    background-color: #303030;
+}
+
+
+.quote-holder {
+    background: radial-gradient(90.16% 143.01% at 15.32% 21.04%, rgba(165, 239, 255, 0.2) 0%, rgba(110, 191, 244, 0.0447917) 77.08%);
+    background-blend-mode: overlay, normal;
+    backdrop-filter: blur(80px);
+    color: white;
+    border-radius: 20px;
+    padding: 50px;
+    max-width: 800px;
+    font-family: 'Poppins', sans-serif;
+    margin: 40px 20px;
+}
+
+.quote-holder .quote {
+    font-size: 30px;
+}
+
+.quote-holder .author {
+    font-size: 20px;
+    margin: 20px 0px;
+}
+
+.quote-holder .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quote-holder .controls i {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.quote-holder .controls .tooltip {
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    font-size: 15px;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.quote-holder .controls .tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 7px solid;
+    border-color: transparent transparent black transparent;
+}
+
+.quote-holder .controls>div {
+    position: relative;
+}
+
+.quote-holder .controls .copy:hover #copy-tooltip {
+    display: block;
+}
+
+.quote-holder .controls .refresh:hover #refresh-tooltip {
+    display: block;
+}
